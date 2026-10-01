@@ -562,51 +562,6 @@ button {
   }
 }
 
-/* ---- marquee ---------------------------------------------------------- */
-.marquee-band {
-  overflow: hidden;
-  border-block: 1px solid var(--line);
-  background: var(--paper-dim);
-}
-
-.marquee {
-  display: flex;
-  white-space: nowrap;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(3rem, 3vw + 2.5rem, 6.5rem);
-  line-height: 1;
-  padding-block: 0.35em;
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--ink);
-  animation: marquee-scroll 28s linear infinite;
-  width: max-content;
-}
-
-.marquee span {
-  padding-inline: 0.4em;
-}
-
-.marquee span:first-child {
-  color: var(--ink);
-  -webkit-text-stroke: 0;
-}
-
-@keyframes marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee {
-    animation: none;
-  }
-}
-
 /* ---- services ---------------------------------------------------------- */
 .service-list {
   display: grid;
@@ -861,7 +816,7 @@ button {
 }
 
 .legal-page .wrap {
-  max-width: 48rem;
+  max-width: 70ch;
 }
 
 .legal-page h1 {
@@ -869,6 +824,7 @@ button {
   font-weight: 600;
   font-size: clamp(2rem, 1.6rem + 2vw, 2.9rem);
   margin-bottom: 2rem;
+  max-width: 100%;
 }
 
 .legal-page h2 {
@@ -878,9 +834,17 @@ button {
   margin: 2.25rem 0 0.75rem;
 }
 
+.legal-page h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 1.75rem 0 0.6rem;
+}
+
 .legal-page p,
 .legal-page li {
   color: var(--ink);
+  line-height: 1.7;
   margin-bottom: 0.9rem;
 }
 
